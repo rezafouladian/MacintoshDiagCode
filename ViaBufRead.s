@@ -2,9 +2,18 @@
 SE30        EQU 0
         ENDIF
 
+        IFND SE
+SE          EQU 0
+        ENDIF
+
         IF SE30
 VIA2        EQU 1
             INCLUDE 'ROMTools/Hardware/SE30.s'
+        ENDIF
+
+        IF SE
+VIA2        EQU 0
+            INCLUDE 'ROMTools/Hardware/SE.s'
         ENDIF
 
         IFND VIA2
